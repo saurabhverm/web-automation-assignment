@@ -2,7 +2,7 @@ package annotations;
 
 public enum Tester {
  
-	Mayank("Mayank Chauhan");
+	Saurabh("Saurabh Verma");
 
     public String authorName;
     Tester(String authorName)

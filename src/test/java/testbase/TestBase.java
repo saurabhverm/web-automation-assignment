@@ -4,6 +4,9 @@ import drivers.DriverInitializer;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.BeforeMethod;
+import pages.AmazonHomePage;
+import pages.CartPage;
+import pages.ProductPage;
 import utilities.ConfigReader;
 
 import java.util.concurrent.TimeUnit;
@@ -13,13 +16,17 @@ public class TestBase {
 
     public static WebDriver driver;
     protected ConfigReader configReader;
-    protected TalkyPage talkyPage;
+    protected AmazonHomePage amazonHomePage;
+    protected ProductPage productPage;
+    protected CartPage cartPage;
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() throws Exception {
         driver = new DriverInitializer("chrome").init();
         configReader = new ConfigReader();
-        talkyPage = new TalkyPage();
+        amazonHomePage = new AmazonHomePage();
+        productPage = new ProductPage();
+        cartPage = new CartPage();
     }
 
     protected void navigateTo(String url) {
